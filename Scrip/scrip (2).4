@@ -1,0 +1,41 @@
+#Datos de semillas
+#pruebas de t de una muestra
+#realizar la comparacion de una miuestra expiremental vs una muestra teoretica
+
+Datos <- read.csv("Datos_raw.csv", header = T)
+
+View(Datos_raw)
+
+median(Datos_raw$Peso)
+
+# probar la normalidad de los datos de semillas
+shapiro.test(Datos_raw$Peso)
+
+
+#primera visualizacion de los datos
+
+boxplot(Datos_raw$Peso, col = "lightblue")
+abline(h= 6.2, col= "red", lwd= 3, lty ="dotdash")
+abline(h=5.7, col= "green", lwd=3, lty = "dotdash" )
+
+t.test(Datos_raw$Peso, mu= 6.2)
+#exsisten diferencias entre el peso observado y el peso de la
+# media teoretica
+#aceptamos la hipotesis alternativa
+
+#ejemplo 2
+
+#ahora la media terotecia es de 5.85
+boxplot(Datos_raw$Peso, col= "red")
+abline(h= 5.85, col= "red", lwd= 3, lty ="dotdash")
+abline(h=5.7, col= "green", lwd=3, lty = "dotdash" )
+t.test(Datos_raw$Peso, mu0 5.85)
+
+#prueba teretica con 5.78
+boxplot(Datos_raw$Peso, col= "red")
+abline(h= 5.78, col= "red", lw(h=5.7,lwd=, 3, lty = "dostdash")
+abline(h=5.7, col= "green", lwd =3, lty = "dotdash")
+                               
+t.test(Datos_raw$Peso, mu = 5.78)
+t.test(Datos_raw$Peso, mu = 5.78, alternative = "less")
+
